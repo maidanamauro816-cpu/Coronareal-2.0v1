@@ -34,7 +34,7 @@ export default function LoginScreen() {
       } else {
         credential = await signInWithEmailAndPassword(auth, email.trim(), password);
       }
-      router.replace("/(tabs)");
+      router.replace("/(tabs)/home");
     } catch (error: any) {
       console.error("Error de autenticación:", error);
       Alert.alert("No se pudo ingresar", error?.message || "Revisá tus datos y que Email/Password esté habilitado en Firebase Authentication.");
