@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "180396928287",
+    "project_id": "coronareal2v1",
+    "storage_bucket": "coronareal2v1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180396928287:android:d92bed3f0130969012d42a",
+        "android_client_info": {
+          "package_name": "com.maidanamauro.coronareal2v1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHL_QMm60jDnChDVIUjckhxi2hc57zfqM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
