@@ -20,7 +20,7 @@ export default function TabsLayout() {
         tabBarLabelStyle: { fontSize: 10, fontWeight: "600" },
       }}
     >
-      <Tabs.Screen name="index" options={{ title: "Inicio", tabBarIcon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color} /> }} />
+      <Tabs.Screen name="home" options={{ title: "Inicio", tabBarIcon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color} /> }} />
       <Tabs.Screen name="servicios/index" options={{ title: "Servicios", tabBarIcon: ({ color, size }) => <Ionicons name="cut-outline" size={size} color={color} /> }} />
       <Tabs.Screen name="reservas/index" options={{ title: "Reservas", tabBarIcon: ({ color, size }) => <Ionicons name="calendar-outline" size={size} color={color} /> }} />
       <Tabs.Screen name="tienda/index" options={{ title: "Tienda", tabBarIcon: ({ color, size }) => <Ionicons name="bag-outline" size={size} color={color} /> }} />
