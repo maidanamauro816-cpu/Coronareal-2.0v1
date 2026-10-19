@@ -23,5 +23,5 @@ export default function IndexRoute() {
     );
   }
 
-  return <Redirect href={signedIn ? "/(tabs)" : "/(auth)/login"} />;
+  return <Redirect href={signedIn ? "/(tabs)/home" : "/(auth)/login"} />;
 }
