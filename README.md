@@ -1,30 +1,44 @@
 # CORONA REAL 2.0v1
 
-Repositorio de continuidad del proyecto móvil CORONA REAL.
+Aplicación móvil Expo Router + React Native + Firebase para Corona Real, con estética premium negra y dorada.
 
-## Estado
-Este repositorio se ha identificado en GitHub, pero inicialmente estaba vacío. Se está documentando aquí el progreso compartido en la conversación. **No hay una compilación APK verificada todavía.**
+## Incluye en esta rama
+- Login y registro por correo/contraseña con Firebase Authentication.
+- Inicio con seis categorías de servicios.
+- Catálogo de servicios y detalle por categoría.
+- Solicitud de reservas y lista en tiempo real.
+- Catálogo inicial de tienda.
+- Perfil editable con foto Base64 guardada en Firestore, sin Firebase Storage.
+- Cinco pestañas inferiores: Inicio, Servicios, Reservas, Tienda y Perfil.
+- Reglas e índice iniciales de Firestore.
+- Workflow de GitHub Actions para compilar un APK Android de depuración.
 
-## Stack existente declarado
+## Stack
 - Expo SDK `~51.0.28`
 - Expo Router `~3.5.23`
-- React `18.2.0`
 - React Native `0.74.5`
-- Firebase JS SDK `^10.12.2`
-- TypeScript `^5.3.3`
+- Firebase JS SDK `10.12.2`
+- TypeScript
 
-Mantener estas versiones por ahora; no migrar a SDK 54 sin revisar compatibilidad.
+## Firebase
+Se incorporó el archivo Android `google-services.json` del proyecto Firebase `coronareal2v1`, paquete `com.maidanamauro.coronareal2v1`.
 
-## Diseño
-- Negro: `#0A0A0A`
-- Dorado: `#FFD700`
-- Dorado metálico: `#D4AF37`
-- Logo de corona transparente esperado en `assets/images/logo_1024.png`, `logo_512.png`, `logo_256.png`
-- Cinco pestañas: Inicio, Servicios, Reservas, Tienda y Perfil.
+**Requisitos de consola aún por verificar:** habilitar Email/Password en Authentication, comprobar reglas/índices de Firestore y confirmar que existe la configuración de una app web Firebase válida para el SDK JavaScript. Las reglas locales de este repositorio no se despliegan automáticamente a Firebase.
 
-## Documentación
-- [Progreso, arquitectura y tareas pendientes](docs/PROGRESO.md)
-- [Código compartido en el chat](docs/CODIGO_COMPARTIDO.md)
+## Foto de perfil sin Storage
+La imagen se recorta a 1:1 con Expo Image Picker y se guarda como `data:image/jpeg;base64,...` en `users/{uid}.fotoPerfil`. El archivo limita la imagen antes de guardar para dejar margen dentro del límite de 1 MiB por documento de Firestore. No se usa `firebase/storage`.
 
-## Próximo paso
-Subir/copiar los archivos reales faltantes (`app/`, `services/`, `assets/`, `app.json`, `package.json`, reglas e índices), revisar Firebase y ejecutar una compilación. No subir secretos ni credenciales administrativas.
+## Precios y tienda
+Los precios del catálogo son ejemplos heredados de la documentación, no tarifas confirmadas. La tienda es por ahora un catálogo visual sin pagos ni inventario conectado.
+
+## Compilación
+El workflow [Android APK](.github/workflows/android-apk.yml) se ejecuta automáticamente al cambiar los archivos relevantes. Consultá la pestaña **Actions** para ver el resultado y descargar el artefacto `corona-real-debug-apk` cuando el build termine.
+
+## Próximas verificaciones
+1. Confirmar compilación en Actions y corregir errores detectados.
+2. Probar login/registro y lectura/escritura de Firestore con una cuenta real.
+3. Confirmar los índices y reglas en Firebase Console.
+4. Confirmar la app web Firebase config si el SDK JavaScript requiere un `appId` web.
+5. Reemplazar precios de ejemplo y completar horarios/disponibilidad real de reservas.
+
+© Mauro Iván Maidana
